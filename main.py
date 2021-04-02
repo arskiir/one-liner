@@ -1,7 +1,3 @@
-# ------------------------------------------------------------------------
-# ! make text with tabs and newline characters to a unicode one liner
-# ! here https://onlineunicodetools.com/convert-unicode-to-string-literal
-
 import sys
 import os
 if os.name == 'nt':
