@@ -17,10 +17,22 @@ def main():
 
 
 def print_one_liner(uni: str) -> None:
+    """process "str" of uni code escape characters 
+    and print them in unicode literal with newline and tab as \n and \t
+    """
+
     list_of_ascii_hex = uni.replace("\\u", " ").split()
     string = "".join(
         list(map(lambda hex_string: chr(int(hex_string, 16)), list_of_ascii_hex)))
-    processed_string = string.replace('\n', "\\n").replace('\t', "\\t")
+    processed_string = ""
+    for each in string:
+        if each == '\n':
+            processed_string += "\\n"
+            continue
+        if each == '\t':
+            processed_string += "\\t"
+            continue
+        processed_string += each
     print(processed_string)
 
 
