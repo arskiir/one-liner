@@ -28,7 +28,8 @@ def transform_one_line(string: str) -> str:
     """ process text with newline and tab characters as \n and \t """
 
     processed_string = ""
-    for each in string:
+    # use str.replace to keep the existing hardcoded "\n"
+    for each in string.replace("\\n", "\\\\n"):  
         if each == '"':
             processed_string += "'"
             continue
