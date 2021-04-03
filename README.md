@@ -47,6 +47,11 @@ output:
 import os\nif os.name == 'nt':\n    import msvcrt\nelse:\n    import termios\n\n\ndef wait_key(prompt=None, end='\\n'):\n    ''' Wait for a key press on the console and return it as str type. '''\n\n    if prompt:\n        print(prompt, end=end)\n\n    result = None\n    if os.name == 'nt':\n        result = msvcrt.getch()\n    else:\n        fd = sys.stdin.fileno()\n\n        oldterm = termios.tcgetattr(fd)\n        newattr = termios.tcgetattr(fd)\n        newattr[3] = newattr[3] & ~termios.ICANON & ~termios.ECHO\n        termios.tcsetattr(fd, termios.TCSANOW, newattr)\n\n        try:\n            result = sys.stdin.read(1)\n        except IOError:\n            pass\n        finally:\n            termios.tcsetattr(fd, termios.TCSAFLUSH, oldterm)\n\n    return result if type(result) == str else result.decode('utf-8')
 ```
 
+## Usage
+1. run main.py
+2. ???
+3. profit
+
 ## Use cases
 
 Idk. Something like
