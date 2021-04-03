@@ -14,7 +14,7 @@ def main():
     wait_key("Press any key to open file, paste code, save, then return here")
     os.system("start " + raw_code_file)
     wait_key("Press any key to continue")
-    
+
     processed_code_file = "one-line-code.txt"
     with open(raw_code_file) as f:
         processed_string = transform_one_line(f.read())
@@ -22,6 +22,7 @@ def main():
             p.write(processed_string)
         os.system("start " + processed_code_file)
         print(processed_string)
+
 
 def transform_one_line(string: str) -> str:
     """ process text with newline and tab characters as \n and \t """
@@ -38,7 +39,6 @@ def transform_one_line(string: str) -> str:
             processed_string += "'"
             continue
         processed_string += each
-        print(processed_string)
     return processed_string
 
 
@@ -71,4 +71,3 @@ def wait_key(prompt=None, end='\n'):
 
 if __name__ == "__main__":
     main()
-
