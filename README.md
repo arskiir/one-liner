@@ -119,4 +119,5 @@ def wait_key(prompt=None, end='\n'):
 [Try it your self](https://replit.com/@ArmSukrit/printingnicely)
 
 ## Limitations
-Breaks when "\\\\\\...n" is hardcoded (number of '\\' is more than 2 next to 'n')
+- breaks when "\\\\\\...n" is hardcoded (number of '\\' is more than 2 next to 'n')
+- converts " to ' (makes the code compatible when paste into json, such as for vscode snippets)
