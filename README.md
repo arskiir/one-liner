@@ -120,4 +120,3 @@ def wait_key(prompt=None, end='\n'):
 
 ## Limitations
 - breaks when "\\\\\\...n" is hardcoded (number of '\\' is more than 2 next to 'n')
-- converts " to ' (makes the code compatible when paste into json, such as for vscode snippets)
