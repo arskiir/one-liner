@@ -1,6 +1,6 @@
 # arskiir.one-liner
 
-Replace the invisible newline and tab characters with \\n and \\t respectively, *making lines into a line*.
+Replace the invisible newline and tab characters with \\n and \\t respectively, *making lines into a line* of string format.
 
 ## How it is
 
