@@ -29,14 +29,14 @@ def transform_one_line(string: str) -> str:
 
     processed_string = ""
     for each in string:
+        if each == '"':
+            processed_string += "'"
+            continue
         if each == '\n':
             processed_string += "\\n"
             continue
         if each == '\t':
             processed_string += "\\t"
-            continue
-        if each == '"':
-            processed_string += "'"
             continue
         processed_string += each
     return processed_string
