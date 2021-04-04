@@ -4,10 +4,34 @@ const updateOutput = (text) => {
     document.getElementById("one-liner").value = oneLiner;
 };
 
+function clearSelection() {
+    // clear selection of the entire document
+    var sel;
+    if ((sel = document.selection) && sel.empty) {
+        sel.empty();
+    } else {
+        if (window.getSelection) {
+            window.getSelection().removeAllRanges();
+        }
+        var activeEl = document.activeElement;
+        if (activeEl) {
+            var tagName = activeEl.nodeName.toLowerCase();
+            if (
+                tagName == "textarea" ||
+                (tagName == "input" && activeEl.type == "text")
+            ) {
+                // Collapse the selection to the end
+                activeEl.selectionStart = activeEl.selectionEnd;
+            }
+        }
+    }
+}
+
 const copy = () => {
     const oneLinerTextArea = document.getElementById("one-liner");
     oneLinerTextArea.select();
     document.execCommand("copy");
+    clearSelection();
     alert("Copied to clipboard!");
 };
 
@@ -33,7 +57,6 @@ const makeOneLine = (text) => {
 
 const exampleCode =
     "#include <iostream>\n\nint main()\n{\n\tstd::cout << \"Hello World!\\n\";\n}\n\n// breaks when \"\\\\\\...n\" is hardcoded (number of '\\' is more than 2 next to 'n')";
-const exampleCodeNode = document.createTextNode(exampleCode);
 
 const resetIfDefault = (code) => {
     if (code === exampleCode) {
