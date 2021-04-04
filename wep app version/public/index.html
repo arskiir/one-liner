@@ -51,6 +51,8 @@
                 spellcheck="false"
                 autofocus
                 onkeyup="updateOutput(this.value)"
+                onclick="resetIfDefault(this.value)"
+                onblur="showDefaultIfBlank(this.value)"
                 name="raw-code"
                 id="raw-code"
                 cols="120"

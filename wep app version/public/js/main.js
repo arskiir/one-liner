@@ -1,5 +1,6 @@
 const updateOutput = (text) => {
-    const oneLiner = makeOneLine(text);
+    let oneLiner = "";
+    if (text) oneLiner = makeOneLine(text);
     document.getElementById("one-liner").value = oneLiner;
 };
 
@@ -30,6 +31,23 @@ const makeOneLine = (text) => {
     return processed_string;
 };
 
+const exampleCode =
+    "#include <iostream>\n\nint main()\n{\n\tstd::cout << \"Hello World!\\n\";\n}\n\n// breaks when \"\\\\\\...n\" is hardcoded (number of '\\' is more than 2 next to 'n')";
+const exampleCodeNode = document.createTextNode(exampleCode);
+
+const resetIfDefault = (code) => {
+    if (code === exampleCode) {
+        document.getElementById("raw-code").value = "";
+        updateOutput();
+    }
+};
+
+const showDefaultIfBlank = (code) => {
+    if (code.trim() === "") {
+        document.getElementById("raw-code").value = exampleCode;
+        updateOutput(exampleCode);
+    }
+};
 
 // ! run these after DOMContentLoaded
 const textareas = document.getElementsByTagName("textarea");
@@ -48,9 +66,6 @@ for (var i = 0; i < count; i++) {
     };
 }
 
-const exampleCode =
-    '#include <iostream>\n\nint main()\n{\n\tstd::cout << "Hello World!\\n";\n}\n';
-const exampleCodeNode = document.createTextNode(exampleCode);
-document.getElementById("raw-code").appendChild(exampleCodeNode);
+document.getElementById("raw-code").value = exampleCode;
 updateOutput(exampleCode);
 // ! run above after DOMContentLoaded
