@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- script related -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyDhFYLYU3w2mANBl5pvrrHSnSzeFVmjE9c",
+                authDomain: "arskiir-one-liner.firebaseapp.com",
+                projectId: "arskiir-one-liner",
+                storageBucket: "arskiir-one-liner.appspot.com",
+                messagingSenderId: "18579283513",
+                appId: "1:18579283513:web:951c78afc5bb1c07b377e8",
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
+        <script src="./js/main.js" defer></script>
+        <!--  -->
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>one-liner</title>
+    </head>
+    <body>
+        <header>
+            <a href="https://github.com/arskiir/one-liner" target="_blank"
+                ><h1>arskiir.one-liner</h1></a
+            >
+        </header>
+
+        <main>
+            <label for="one-liner">OUTPUT:</label>
+            <textarea
+                name="one-liner"
+                id="one-liner"
+                cols="120"
+                rows="2"
+            ></textarea>
+            <label for="raw-code">INPUT:</label>
+            <textarea
+                autofocus
+                oninput="updateOutput(this.value)"
+                name="raw-code"
+                id="raw-code"
+                cols="120"
+                rows="2"
+            ></textarea>
+        </main>
+    </body>
+</html>

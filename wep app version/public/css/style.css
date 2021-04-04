@@ -8,7 +8,7 @@ body {
 
 main {
     background-color: grey;
-    height: 100vh;
+    height: 90vh;
     text-align: center;
 }
 
@@ -27,6 +27,7 @@ a {
     color: white;
 }
 
+
 #raw-code {
-    height: 90vh;
+    height: 80%;
 }
