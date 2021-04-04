@@ -36,6 +36,7 @@
         <main>
             <label for="one-liner">OUTPUT:</label>
             <textarea
+                style="tab-size: 4;"
                 onclick="copy()"
                 spellcheck="false"
                 name="one-liner"
@@ -45,9 +46,10 @@
             ></textarea>
             <label for="raw-code">INPUT:</label>
             <textarea
+                style="tab-size: 4;"
                 spellcheck="false"
                 autofocus
-                oninput="updateOutput(this.value)"
+                onkeyup="updateOutput(this.value)"
                 name="raw-code"
                 id="raw-code"
                 cols="120"
