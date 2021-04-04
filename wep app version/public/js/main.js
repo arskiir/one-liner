@@ -8,7 +8,7 @@ const copy = () => {
     const oneLinerTextArea = document.getElementById("one-liner");
     oneLinerTextArea.select();
     document.execCommand("copy");
-    alert("Copied the text: " + oneLinerTextArea.value);
+    alert("Copied to clipboard!");
 };
 
 const makeOneLine = (text) => {
