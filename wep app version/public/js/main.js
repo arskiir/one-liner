@@ -4,6 +4,15 @@ const updateOutput = (text) => {
     document.getElementById("one-liner").value = oneLiner;
 };
 
+const updateInput = (text) => {
+    document.getElementById("raw-code").value = text;
+    updateOutput(text);
+    if (text === "") {
+        // user click delete button
+        document.getElementById("raw-code").focus();
+    }
+};
+
 function clearSelection() {
     // clear selection of the entire document
     var sel;

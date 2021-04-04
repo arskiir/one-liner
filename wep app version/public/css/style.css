@@ -29,3 +29,8 @@ a {
 #raw-code {
     height: 80%;
 }
+
+#repo-name {
+    display: inline;
+    margin-left: 10px;
+}
