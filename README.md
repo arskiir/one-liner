@@ -48,9 +48,16 @@ import os\nif os.name == 'nt':\n    import msvcrt\nelse:\n    import termios\n\n
 ```
 
 ## Usage
+
+### Python
+
 1. run main.py
 2. ???
 3. profit
+
+### Web Application
+
+- <https://arskiir-one-liner.web.app/>
 
 ## Use cases
 
