@@ -6,6 +6,10 @@ else:
     import termios
 
 
+MAIN_FILE_PATH = os.path.abspath(__file__)
+MAIN_FILE_DIR = os.path.dirname(MAIN_FILE_PATH)
+
+
 def main():
     raw_code_file = "code.txt"
     if not os.path.exists(raw_code_file):
@@ -29,7 +33,7 @@ def transform_one_line(string: str) -> str:
 
     processed_string = ""
     # use str.replace to keep the existing hardcoded "\n"
-    for each in string.replace("\\n", "\\\\n"):  
+    for each in string.replace("\\n", "\\\\n"):
         if each == '"':
             processed_string += '\\"'
             continue
@@ -71,4 +75,5 @@ def wait_key(prompt=None, end='\n'):
 
 
 if __name__ == "__main__":
+    os.chdir(MAIN_FILE_DIR)
     main()
