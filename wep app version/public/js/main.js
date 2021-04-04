@@ -13,6 +13,7 @@ const updateInput = (text) => {
     if (text === "") {
         // user click delete button
         document.getElementById("raw-code").focus();
+        document.getElementById("raw-code").value = "";
     }
 };
 
