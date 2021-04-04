@@ -5,7 +5,7 @@ const updateOutput = (text) => {
 
 const makeOneLine = (text) => {
     let processed_string = "";
-    for (let char of text) {
+    for (let char of text.replace("\\n", "\\\\n")) {
         if (char == '"') {
             processed_string += '\\"';
             continue;
