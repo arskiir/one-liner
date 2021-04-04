@@ -1,26 +1,10 @@
-const validateInput = (text) => {
-    if (text.includes("\\\\n")) return false;
-    return true;
-};
-
-const setWarnInput = (notHidden = true) => {
-    document.getElementById("warn-invalid").hidden = !notHidden;
-};
-
 const updateOutput = (text) => {
     if (!text) {
         document.getElementById("one-liner").value = "";
         return;
     }
-    const isTextVaild = validateInput(text);
-    if (isTextVaild) {
-        const oneLiner = makeOneLine(text);
-        document.getElementById("one-liner").value = oneLiner;
-        setWarnInput(false);
-    } else {
-        document.getElementById("one-liner").value = "";
-        setWarnInput(true);
-    }
+    const oneLiner = makeOneLine(text);
+    document.getElementById("one-liner").value = oneLiner;
 };
 
 const updateInput = (text) => {
@@ -65,9 +49,13 @@ const copy = () => {
 
 const makeOneLine = (text) => {
     let processed_string = "";
-    for (let char of text.replace("\\n", "\\\\n")) {
+    for (let char of text) {
         if (char == '"') {
             processed_string += '\\"';
+            continue;
+        }
+        if (char == "\\") {
+            processed_string += "\\\\";
             continue;
         }
         if (char == "\n") {
@@ -84,7 +72,7 @@ const makeOneLine = (text) => {
 };
 
 const exampleCode =
-    '#include <iostream>\n\nint main()\n{\n\tstd::cout << "Hello World!\\n";\n}\n\n// breaks when "\\\\...n" is hardcoded (number of \'\\\' is >= 2)';
+    '#include <iostream>\n\nint main()\n{\n\tstd::cout << "Hello World!\\n";\n}\n';
 
 const resetIfDefault = (code) => {
     if (code === exampleCode) {

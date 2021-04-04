@@ -33,7 +33,10 @@ def transform_one_line(string: str) -> str:
 
     processed_string = ""
     # use str.replace to keep the existing hardcoded "\n"
-    for each in string.replace("\\n", "\\\\n"):
+    for each in string:
+        if each == "\\":
+            processed_string += "\\\\"
+            continue
         if each == '"':
             processed_string += '\\"'
             continue

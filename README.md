@@ -126,4 +126,5 @@ def wait_key(prompt=None, end='\n'):
 [Try it your self](https://replit.com/@ArmSukrit/printingnicely)
 
 ## Limitations
-- breaks when "\\\\\\...n" is hardcoded (number of '\\' is more than 2 next to 'n')
+
+_None_
