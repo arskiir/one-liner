@@ -1,19 +1,3 @@
-const textareas = document.getElementsByTagName("textarea");
-const count = textareas.length;
-for (var i = 0; i < count; i++) {
-    textareas[i].onkeydown = function (e) {
-        if (e.key == 9 || e.which == 9) {
-            e.preventDefault();
-            var s = this.selectionStart;
-            this.value =
-                this.value.substring(0, this.selectionStart) +
-                "\t" +
-                this.value.substring(this.selectionEnd);
-            this.selectionEnd = s + 1;
-        }
-    };
-}
-
 const updateOutput = (text) => {
     const oneLiner = makeOneLine(text);
     document.getElementById("one-liner").value = oneLiner;
@@ -45,3 +29,28 @@ const makeOneLine = (text) => {
     }
     return processed_string;
 };
+
+
+// ! run these after DOMContentLoaded
+const textareas = document.getElementsByTagName("textarea");
+const count = textareas.length;
+for (var i = 0; i < count; i++) {
+    textareas[i].onkeydown = function (e) {
+        if (e.key == 9 || e.which == 9) {
+            e.preventDefault();
+            var s = this.selectionStart;
+            this.value =
+                this.value.substring(0, this.selectionStart) +
+                "\t" +
+                this.value.substring(this.selectionEnd);
+            this.selectionEnd = s + 1;
+        }
+    };
+}
+
+const exampleCode =
+    '#include <iostream>\n\nint main()\n{\n\tstd::cout << "Hello World!\\n";\n}\n';
+const exampleCodeNode = document.createTextNode(exampleCode);
+document.getElementById("raw-code").appendChild(exampleCodeNode);
+updateOutput(exampleCode);
+// ! run above after DOMContentLoaded
