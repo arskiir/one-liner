@@ -3,6 +3,13 @@ const updateOutput = (text) => {
     document.getElementById("one-liner").value = oneLiner;
 };
 
+const copy = () => {
+    const oneLinerTextArea = document.getElementById("one-liner");
+    oneLinerTextArea.select();
+    document.execCommand("copy");
+    alert("Copied the text: " + oneLinerTextArea.value);
+};
+
 const makeOneLine = (text) => {
     let processed_string = "";
     for (let char of text.replace("\\n", "\\\\n")) {
