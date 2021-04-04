@@ -15,7 +15,7 @@ def main():
     if not os.path.exists(raw_code_file):
         open(raw_code_file, "w").close()
 
-    wait_key("Press any key to open file, paste code, save, then return here")
+    print("In " + raw_code_file + " paste code, save, then return here")
     os.system("start " + raw_code_file)
     wait_key("Press any key to continue")
 
