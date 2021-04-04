@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="./main.js" defer></script>
-    <link rel="stylesheet" href="./style.css">
+        <script src="./main.js" defer></script>
+        <link rel="stylesheet" href="./style.css" />
 
-    <title>one-liner</title>
-</head>
-<body>
-    
-</body>
+        <title>one-liner</title>
+    </head>
+    <body>
+        <header>
+            <a href="https://github.com/arskiir/one-liner" target="_blank"
+                ><h1>arskiir.one-liner</h1></a
+            >
+        </header>
+
+        <main>
+            <label for="one-liner">OUTPUT:</label>
+            <textarea
+                name="one-liner"
+                id="one-liner"
+                cols="120"
+                rows="2"
+            ></textarea>
+            <label for="raw-code">INPUT:</label>
+            <textarea
+                autofocus
+                oninput="updateOutput(this.value)"
+                name="raw-code"
+                id="raw-code"
+                cols="120"
+                rows="2"
+            ></textarea>
+        </main>
+    </body>
 </html>
