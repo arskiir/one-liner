@@ -1,11 +1,30 @@
+const validateInput = (text) => {
+    if (text.includes("\\\\n")) return false;
+    return true;
+};
+
+const setWarnInput = (notHidden = true) => {
+    document.getElementById("warn-invalid").hidden = !notHidden;
+};
+
 const updateOutput = (text) => {
-    let oneLiner = "";
-    if (text) oneLiner = makeOneLine(text);
-    document.getElementById("one-liner").value = oneLiner;
+    if (!text) {
+        document.getElementById("one-liner").value = "";
+        return;
+    }
+    const isTextVaild = validateInput(text);
+    if (isTextVaild) {
+        const oneLiner = makeOneLine(text);
+        document.getElementById("one-liner").value = oneLiner;
+        setWarnInput(false);
+    } else {
+        document.getElementById("one-liner").value = "";
+        setWarnInput(true);
+    }
 };
 
 const updateInput = (text) => {
-    document.getElementById("raw-code").value = text;
+    // document.getElementById("raw-code").value = text;
     updateOutput(text);
     if (text === "") {
         // user click delete button
@@ -65,7 +84,7 @@ const makeOneLine = (text) => {
 };
 
 const exampleCode =
-    "#include <iostream>\n\nint main()\n{\n\tstd::cout << \"Hello World!\\n\";\n}\n\n// breaks when \"\\\\\\...n\" is hardcoded (number of '\\' is more than 2 next to 'n')";
+    '#include <iostream>\n\nint main()\n{\n\tstd::cout << "Hello World!\\n";\n}\n\n// breaks when "\\\\...n" is hardcoded (number of \'\\\' is >= 2)';
 
 const resetIfDefault = (code) => {
     if (code === exampleCode) {
