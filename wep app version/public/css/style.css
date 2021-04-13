@@ -1,5 +1,9 @@
 @import url("./reset.css");
 
+header {
+    margin-bottom: 16px;
+}
+
 body {
     background-color: black;
     padding: 0px 30px 0px 30px;
