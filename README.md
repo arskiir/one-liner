@@ -63,7 +63,7 @@ import os\nif os.name == 'nt':\n    import msvcrt\nelse:\n    import termios\n\n
 
 Idk. Something like
 
-### Create vscode snippet much faster and easier
+- ### Create vscode snippet much faster and easier
 
 See something useful or hate typing the same code again and again? Just make the snippets yourself in *copy-pasta style*!  
 Type "Configure User Snippets" in command pallete and be happy.
@@ -81,7 +81,7 @@ Type "Configure User Snippets" in command pallete and be happy.
 }
 ```
 
-### Print nicely to console
+- ### Print nicely to console
 
 ```python
 Python 3.8.8 (tags/v3.8.8:024d805, Feb 19 2021, 13:18:16) [MSC v.1928 64 bit (AMD64)] on win32
