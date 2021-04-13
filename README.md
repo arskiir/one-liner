@@ -65,7 +65,7 @@ Idk. Something like
 
 - ### Create vscode snippet much faster and easier
 
-See something useful or hate typing the same code again and again? Just make the snippets yourself in *copy-pasta style*!  
+See something useful or hate typing the same code again and again? Just make the snippets yourself in *copy-pasta* style!  
 Type "Configure User Snippets" in command pallete and be happy.
 
 ```json
@@ -124,7 +124,7 @@ def wait_key(prompt=None, end="\n"):
 >>> # The above kinda looks cool
 ```
 
-[Try it your self](https://replit.com/@ArmSukrit/printingnicely)
+[Try it yourself](https://replit.com/@ArmSukrit/printingnicely)
 
 ## Limitations
 
