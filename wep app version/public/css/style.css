@@ -18,7 +18,8 @@ textarea {
     left: 50%;
     transform: translateX(-50%);
     font-size: 1.3em;
-    width: 95%;
+    width: 80%;
+    resize: none;
 }
 
 a {

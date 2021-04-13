@@ -11,4 +11,8 @@
     #github-icon {
         height: var(--mobile-font-size);
     }
+
+    textarea {
+        width: 95%;
+    }
 }
