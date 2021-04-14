@@ -29,9 +29,9 @@
             crossorigin="anonymous"
         ></script>
         <link rel="stylesheet" href="./css/style.css" />
-        <link rel="stylesheet" href="./css/responsive.css">
+        <link rel="stylesheet" href="./css/responsive.css" />
         <!-- end style -->
-        <link rel="icon" href="./icon/favicon.svg" type="image/x-icon">
+        <link rel="icon" href="./icon/favicon.svg" type="image/x-icon" />
         <title>one-liner</title>
     </head>
     <body>
@@ -46,32 +46,36 @@
         </header>
 
         <main>
-            <label for="one-liner">OUTPUT:</label>
-            <textarea
-                style="tab-size: 4"
-                onclick="copy()"
-                spellcheck="false"
-                name="one-liner"
-                id="one-liner"
-                cols="120"
-                rows="2"
-                readonly
-            ></textarea>
+            <div id="output-div">
+                <label for="one-liner">OUTPUT:</label>
+                <textarea
+                    style="tab-size: 4"
+                    onclick="copy()"
+                    spellcheck="false"
+                    name="one-liner"
+                    id="one-liner"
+                    cols="120"
+                    rows="2"
+                    readonly
+                ></textarea>
+            </div>
 
-            <i class="fas fa-trash-alt" onclick="updateInput('')"></i>
-            <label for="raw-code">INPUT:</label>
-            <textarea
-                style="tab-size: 4"
-                spellcheck="false"
-                autofocus
-                onkeyup="updateOutput(this.value)"
-                onclick="resetIfDefault(this.value)"
-                onblur="showDefaultIfBlank(this.value)"
-                name="raw-code"
-                id="raw-code"
-                cols="120"
-                rows="2"
-            ></textarea>
+            <div id="input-div">
+                <i class="fas fa-trash-alt" onclick="updateInput('')"></i>
+                <label for="raw-code">INPUT:</label>
+                <textarea
+                    style="tab-size: 4"
+                    spellcheck="false"
+                    autofocus
+                    onkeyup="updateOutput(this.value)"
+                    onclick="resetIfDefault(this.value)"
+                    onblur="showDefaultIfBlank(this.value)"
+                    name="raw-code"
+                    id="raw-code"
+                    cols="120"
+                    rows="2"
+                ></textarea>
+            </div>
         </main>
     </body>
 </html>

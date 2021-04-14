@@ -1,15 +1,15 @@
 /* for mobile device screens */
 :root {
-    --mobile-font-size: 24px;
+    --repo-font-size: 24px;
 }
 
 @media screen and (max-width: 500px) and (orientation: portrait) {
     #repo-name {
-        font-size: var(--mobile-font-size);
+        font-size: var(--repo-font-size);
     }
 
     #github-icon {
-        height: var(--mobile-font-size);
+        height: var(--repo-font-size);
     }
 
     textarea {

@@ -1,7 +1,14 @@
 @import url("./reset.css");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root {
+    --header-height: 50px;
+    --input-div-height: 60px;
+}
 
 header {
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
+    height: var(--header-height);
 }
 
 body {
@@ -12,18 +19,19 @@ body {
 
 main {
     background-color: grey;
-    height: 90vh;
+    height: fit-content;
     text-align: center;
 }
 
 textarea {
     display: block;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-left: auto;
+    margin-right: auto;
     font-size: 1.3em;
     width: 80%;
     resize: none;
+    padding-left: 5px;
 }
 
 a {
@@ -31,11 +39,18 @@ a {
     color: white;
 }
 
+#input-div {
+    height: calc(100vh - var(--header-height) - var(--input-div-height));
+}
+
 #raw-code {
-    height: 80%;
+    height: calc(100vh - var(--header-height) - var(--input-div-height) - 30px);
 }
 
 #repo-name {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 28px;
     display: inline;
     margin-left: 10px;
 }
